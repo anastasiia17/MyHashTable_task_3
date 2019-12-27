@@ -106,13 +106,9 @@ class MyHashTable<K, V> {
             return true;
         }
         if (size * INCREASES_CAPACITY >= capacity) {
-            if (size * INCREASES_CAPACITY < INTEGER_MAX) {
-                capacity *= INCREASES_CAPACITY;
-            } else {
-                capacity = INTEGER_MAX;
-            }
-            table = Arrays.copyOf(table, capacity);
-            return true;
+          capacity *= INCREASES_CAPACITY;
+          table = Arrays.copyOf(table, capacity);
+          return true;
         }
         if (size >= INTEGER_MAX) {
             return false;
